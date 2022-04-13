@@ -7,6 +7,6 @@ class Song():
 
     def show(self):
         if self.ft == None:
-            return f'{self.singer} -> {self.name} - {self.time}'
+            return f'Now playing {self.name} by {self.singer}: [{self.time}]'
         else:
-            return f'{self.singer}, ft. {self.ft} -> {self.name} - {self.time}'
+            return f'Now Playing {self.name} by {self.singer}, ft. {self.ft}: [{self.time}]'

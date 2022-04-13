@@ -1,3 +1,4 @@
+from time import sleep
 from nodes_based_queue import Queue
 
 class Playlist():
@@ -8,8 +9,6 @@ class Playlist():
 
     def add_song(self, Song):
         self.queue.enqueue(Song)
-
-        print(Song.show())
 
     def show_playlist(self):
         for i in self.queue.iter():
@@ -22,8 +21,11 @@ class Playlist():
             probe = self.queue.head
 
             while probe != None:
-                probe.data.show
+                print(probe.data.show())
+                sleep(probe.data.time)
+                
                 probe = probe.next
+                print(f"Now playing next song: {probe.data.name}")
 
             return f"Nice songs! but i'm empty now D: \b Do you want to add more songs?"
         
@@ -35,7 +37,9 @@ class Playlist():
             if probe.data.name.upper() != name_song.upper():
                 probe = probe.next
             else:
-                return probe.data.show()
+                print(probe.data.show())
+                sleep(probe.data.time)
+                return "The song's end..."
 
         return f'I can not find {name_song} in your Playlist :('
             

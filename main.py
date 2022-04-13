@@ -1,11 +1,12 @@
 from playlist_proyect import Playlist
 from Song import Song
+from time import sleep
 
 
 def add_song_by_console():
     song_by: str = str(input("Who created the song: "))
     name: str = str(input("Song's name: "))
-    time_of_song: str = str(input("How long is the song: "))
+    time_of_song: int = int(input("How long is the song (in seconds): "))
     
     validator = True
 
@@ -13,7 +14,8 @@ def add_song_by_console():
         ft_singer:str = input("Do you want to add ft? Y/N: ")
 
         if ft_singer.upper() == "Y":
-            ft_singer = input("Name of the artist: ")
+            ft_singer = input("Name of the artist/artists: ")
+            break
 
         elif ft_singer.upper() == "N":
             ft_singer = None
